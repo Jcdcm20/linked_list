@@ -6,3 +6,7 @@ class Node
     @value = nil
   end
 end
+
+class LinkedList
+  
+end
