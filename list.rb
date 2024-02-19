@@ -23,6 +23,7 @@ class LinkedList
       @tail.next = value
       @tail = value
     end
+    @size += 1
   end
 
   def prepend(value)
@@ -33,11 +34,11 @@ class LinkedList
       value.next = @head
       @head = value
     end 
-    @nodes += 1
+    @size += 1
   end
 
   def size
-    @nodes
+    @size
   end
 
   def head
@@ -46,6 +47,21 @@ class LinkedList
 
   def tail
     @tail
+  end
+
+  def at(index)
+    return 'index bigger than list size' if index > @size
+    current = @head
+    index.times do 
+      current = current.next
+    end
+    current.nil? ? nil : current
+  end
+
+  def pop
+    @size -= 1
+    @tail = self.at(@size - 1)
+    @tail.next = nil
   end
 end
 
