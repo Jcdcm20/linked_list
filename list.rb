@@ -15,6 +15,11 @@ class LinkedList
   end 
 
   def append(value)
+    @tail = value
+    value.next = nil
+  end
+
+  def prepend(value)
     if  @head == nil
       @head = value
       @tail = value
