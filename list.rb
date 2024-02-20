@@ -99,4 +99,13 @@ class LinkedList
     end
     string
   end
+
+  def insert_at(value, index)
+    last = self.at(index - 1)
+    nxt = last.next
+    last.next = value
+    value.next = nxt
+    @size += 1
+  end
 end
+
