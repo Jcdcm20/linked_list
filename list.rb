@@ -63,5 +63,18 @@ class LinkedList
     @tail = self.at(@size - 1)
     @tail.next = nil
   end
+
+  def contains?(value)
+    current = @head
+    @size.times do
+      if current.value == value
+        return true
+      else
+        current = current.next
+      end
+    end
+    false
+  end
 end
+
 
