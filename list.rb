@@ -89,5 +89,14 @@ class LinkedList
     end
     nil
   end
-end
 
+  def to_s
+    string = ''
+    current = @head
+    @size.times do
+      string << "( #{current.value} )  -> "
+      current = current.next
+    end
+    string
+  end
+end
