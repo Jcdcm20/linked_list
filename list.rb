@@ -75,6 +75,19 @@ class LinkedList
     end
     false
   end
-end
 
+  def find(value)
+    index = 0
+    current = @head
+    @size.times do 
+      if current.value == value
+        return index
+      else
+        current = current.next
+        index += 1
+      end
+    end
+    nil
+  end
+end
 
