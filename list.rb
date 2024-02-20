@@ -107,5 +107,19 @@ class LinkedList
     value.next = nxt
     @size += 1
   end
+
+  def remove_at(index)
+    last = self.at(index - 1)
+    last.next = self.at(index).next
+    @size -= 1
+  end
 end
 
+list = LinkedList.new
+c = 1
+5.times do
+  node = Node.new
+  node.value = c
+  list.append(node)
+  c += 1
+end
